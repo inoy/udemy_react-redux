@@ -62,3 +62,10 @@ if (module.hot) {
 [React - DOM 要素 - className](https://ja.reactjs.org/docs/dom-elements.html#classname) より引用
 
 [React Fire: Modernizing React DOM](https://github.com/facebook/react/issues/13525#issuecomment-417818906) 経緯が説明されてる
+
+## 進捗
+
+| 日付  | 現在 | 進捗 |
+| ----- | ---- | ---- |
+| 04/14 | 12   | 12   |
+| 04/15 | 29   | 18   |
