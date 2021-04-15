@@ -16,8 +16,14 @@
 
 ### jsx
 
-セクション 1 で作成したプロジェクト
+セクション 1 で作成したプロジェクト  
+JSX って何、どんな風に書くのって簡単な紹介のためのプロジェクト
 
+![jsx.jpg](readme_resources/jsx.png)
+
+### components
+
+セクション 3 で作成したプロジェクト  
 TODO
 
 ## document.querySelector("#root") vs document.getElementById("root")
