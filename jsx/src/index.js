@@ -6,18 +6,20 @@ if (module.hot) {
   module.hot.accept();
 }
 
-const getButtonText = () => "Click on me!";
-
 // Create a react component
 const App = () => {
+  const buttonText = { text: "Click me" };
+  const labelText = "Enter name:";
+
   return (
     <>
       <label className="label" for="name">
-        Enter name:
+        {labelText}
       </label>
       <input id="name" type="text" />
       <button style={{ backgroundColor: "blue", color: "white" }}>
-        {getButtonText()}
+        {/* Object型をそのまま出力 = {buttonText} は不可って説明 */}
+        {buttonText.text}
       </button>
     </>
   );
