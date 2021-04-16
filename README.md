@@ -23,9 +23,11 @@ JSX って何、どんな風に書くのって簡単な紹介のためのプロ�
 
 ### components
 
-セクション 3 で作成したプロジェクト  
-Components って何、どんな風に書くの・使うのってためのプロジェクト  
-Style は [Semantic UI](https://semantic-ui.com/)、アバター画像とかテキストは [faker.js](https://github.com/marak/Faker.js/) を利用  
+セクション 3 で作成したプロジェクト。  
+Components って何、どんな風に書くの・使うのってためのプロジェクト。  
+Style は [Semantic UI](https://semantic-ui.com/)、アバター画像とかテキストは [faker.js](https://github.com/marak/Faker.js/) を利用。  
+ボタンにアクションは設定されていない。  
+単に ApprovalCard と CommentDetail で Components ってコンポ作って index.js から呼び出す。その際 index.js からそれぞれのコンポへ props 渡してる。また、CommentDetail は ApprovalCard の子要素、ってだけ。  
 ![components.jpg](readme_resources/components.png)
 
 ## document.querySelector("#root") vs document.getElementById("root")
