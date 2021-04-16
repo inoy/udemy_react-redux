@@ -1,6 +1,9 @@
 import React from "react";
+import faker from "faker";
 
-export const CommentDetail = () => {
+faker.locale = "ja";
+
+const CommentDetail = () => {
   return (
     <div className="comment">
       <a href="/" className="avatar">
@@ -18,3 +21,5 @@ export const CommentDetail = () => {
     </div>
   );
 };
+
+export default CommentDetail;
