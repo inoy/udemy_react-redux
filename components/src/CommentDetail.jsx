@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import faker from "faker";
 
 faker.locale = "ja";
 
-const CommentDetail = () => {
+const CommentDetail = ({ author }) => {
   return (
     <div className="comment">
       <a href="/" className="avatar">
@@ -11,7 +12,7 @@ const CommentDetail = () => {
       </a>
       <div className="content">
         <a href="/" className="author">
-          Sam
+          {author}
         </a>
         <div className="metadata">
           <span className="date">Today at 6:00PM</span>
@@ -20,6 +21,10 @@ const CommentDetail = () => {
       </div>
     </div>
   );
+};
+
+CommentDetail.propTypes = {
+  author: PropTypes.string.isRequired,
 };
 
 export default CommentDetail;
