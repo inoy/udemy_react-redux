@@ -16,21 +16,21 @@ const App = () => {
     <div className="ui container comments">
       <CommentDetail
         avatar={faker.image.avatar()}
-        author="Sam"
+        author={faker.name.firstName()}
         timeAgo="Today at 4:45PM"
-        comment="Nice blog post!"
+        content={faker.lorem.text()}
       />
       <CommentDetail
         avatar={faker.image.avatar()}
-        author="Alex"
+        author={faker.name.firstName()}
         timeAgo="Today at 2:00AM"
-        comment="Hello"
+        content={faker.lorem.text()}
       />
       <CommentDetail
         avatar={faker.image.avatar()}
-        author="Jane"
+        author={faker.name.firstName()}
         timeAgo="Yesterday at 5:00PM"
-        comment="Goodbye"
+        content={faker.lorem.text()}
       />
     </div>
   );

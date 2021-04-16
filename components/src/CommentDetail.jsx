@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CommentDetail = ({ avatar, author, timeAgo, comment }) => {
+const CommentDetail = ({ avatar, author, timeAgo, content }) => {
   return (
     <div className="comment">
       <a href="/" className="avatar">
@@ -14,7 +14,7 @@ const CommentDetail = ({ avatar, author, timeAgo, comment }) => {
         <div className="metadata">
           <span className="date">{timeAgo}</span>
         </div>
-        <div className="text">{comment}</div>
+        <div className="text">{content}</div>
       </div>
     </div>
   );
@@ -24,7 +24,7 @@ CommentDetail.propTypes = {
   avatar: PropTypes.node.isRequired,
   author: PropTypes.string.isRequired,
   timeAgo: PropTypes.string.isRequired,
-  comment: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default CommentDetail;
