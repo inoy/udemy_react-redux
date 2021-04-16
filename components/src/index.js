@@ -15,13 +15,14 @@ if (module.hot) {
 const App = () => {
   return (
     <div className="ui container comments">
-      <ApprovalCard />
-      <CommentDetail
-        avatar={faker.image.avatar()}
-        author={faker.name.firstName()}
-        timeAgo="Today at 4:45PM"
-        content={faker.lorem.text()}
-      />
+      <ApprovalCard>
+        <CommentDetail
+          avatar={faker.image.avatar()}
+          author={faker.name.firstName()}
+          timeAgo="Today at 4:45PM"
+          content={faker.lorem.text()}
+        />
+      </ApprovalCard>
       <CommentDetail
         avatar={faker.image.avatar()}
         author={faker.name.firstName()}
