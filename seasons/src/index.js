@@ -8,11 +8,8 @@ if (module.hot) {
 }
 
 class App extends React.Component {
-  // JavaScript - Classes Constructor
-  constructor(props) {
-    super(props);
-    this.state = { lat: null, errorMessage: "" };
-  }
+  // Babelによりconstructorを書いたときと同じ処理に変換
+  state = { lat: null, errorMessage: "" };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
