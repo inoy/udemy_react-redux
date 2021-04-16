@@ -24,7 +24,9 @@ JSX って何、どんな風に書くのって簡単な紹介のためのプロ�
 ### components
 
 セクション 3 で作成したプロジェクト  
-TODO
+Components って何、どんな風に書くの・使うのってためのプロジェクト  
+Style は [Semantic UI](https://semantic-ui.com/)、アバター画像とかテキストは [faker.js](https://github.com/marak/Faker.js/) を利用  
+![components.jpg](readme_resources/components.png)
 
 ## document.querySelector("#root") vs document.getElementById("root")
 
