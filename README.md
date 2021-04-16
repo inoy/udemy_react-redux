@@ -90,6 +90,8 @@ if (module.hot) {
 
 [React - React.Component - コンポーネントライフサイクル](https://ja.reactjs.org/docs/react-component.html#the-component-lifecycle)
 
+![section4-15-purpose.png](readme_resources/section4-15-purpose.png "用途")
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 |
