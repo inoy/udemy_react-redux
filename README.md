@@ -34,7 +34,7 @@ Style は [Semantic UI](https://semantic-ui.com/)、アバター画像とかテ�
 
 セクション 4 で作成したプロジェクト。  
 Class Components を使用。  
-参照者のロケーションといまが何月かによってテキストやスタイルを変えるらしい。
+参照者の[ロケーション](https://developer.mozilla.org/ja/docs/Web/API/Geolocation_API)といまが何月かによってテキストやスタイルを変えるらしい。
 
 TODO
 
