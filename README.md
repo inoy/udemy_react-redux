@@ -36,7 +36,7 @@ TODO
 
 ## create-react-app(CRA)で作成したプロジェクトの ホット/ライブ リロード
 
-React の特定のバージョンでホットリロードが有効にならないバグがあるっぽい。というか実際、CRA でプロジェクト作成 `"react": "^17.0.2",` した後、src ディレクトリ 空にして index.js 一から書くと起こる。  
+React の特定のバージョンでホットリロードが有効にならないバグがあるっぽい。というか実際、CRA でプロジェクト作成 (`"react": "^17.0.2"`) した後、src ディレクトリ 空にして index.js 一から書くと起こる。  
 [Hot Reload stopped working with React "^17.0.1" #9904](https://github.com/facebook/create-react-app/issues/9904)
 
 Udemy で紹介された以下で回避はできるっぽい。
@@ -48,6 +48,8 @@ if (module.hot) {
   module.hot.accept();
 }
 ```
+
+参考: [Webpack - hot-module-replacement](https://webpack.js.org/api/hot-module-replacement/)
 
 ## Babel の変換を確認
 
