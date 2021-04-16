@@ -86,6 +86,10 @@ if (module.hot) {
 
 適用方法として `semantic ui cdn` でぐぐって、[cdnjs](https://cdnjs.com/libraries/semantic-ui)ってとこから Tag/URL 取得するってやり方してる。
 
+## Class Components のライフサイクル
+
+[React - React.Component - コンポーネントライフサイクル](https://ja.reactjs.org/docs/react-component.html#the-component-lifecycle)
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 |

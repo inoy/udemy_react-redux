@@ -20,6 +20,7 @@ class App extends React.Component {
 
   // React says we have to define render
   render() {
+    console.log("render");
     if (this.state.errorMessage && !this.state.lat) {
       return <>Error: {this.state.errorMessage}</>;
     }
@@ -29,6 +30,14 @@ class App extends React.Component {
     }
 
     return <>Loading!</>;
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
   }
 }
 
