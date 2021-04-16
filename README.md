@@ -77,6 +77,10 @@ if (module.hot) {
 
 [React Fire: Modernizing React DOM](https://github.com/facebook/react/issues/13525#issuecomment-417818906) 経緯が説明されてる
 
+## Class Components vs Hooks System
+
+![section4-02-now.png](readme_resources/section4-02-now.png)
+
 ## クラスコンポーネント/Class Components
 
 本講座では Class Components も取り上げられている。  
