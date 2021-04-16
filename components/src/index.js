@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CommentDetail from "./CommentDetail";
 import faker from "faker";
+import ApprovalCard from "./ApprovalCard";
 
 faker.locale = "ja";
 
@@ -14,6 +15,7 @@ if (module.hot) {
 const App = () => {
   return (
     <div className="ui container comments">
+      <ApprovalCard />
       <CommentDetail
         avatar={faker.image.avatar()}
         author={faker.name.firstName()}
