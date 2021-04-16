@@ -65,6 +65,11 @@ if (module.hot) {
 
 [React Fire: Modernizing React DOM](https://github.com/facebook/react/issues/13525#issuecomment-417818906) 経緯が説明されてる
 
+## クラスコンポーネント/Class Components
+
+本講座では Class Components も取り上げられている。  
+その理由は、Redux を理解するには Function Components/Hooks のみを理解した状態では困難（Class Components を理解してからの方が簡単）だからだと [47. Class-Based Components](https://www.udemy.com/course/react-redux/learn/lecture/12531182) で説明されている。
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 |
