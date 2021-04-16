@@ -30,6 +30,14 @@ Style は [Semantic UI](https://semantic-ui.com/)、アバター画像とかテ�
 単に ApprovalCard と CommentDetail で Components ってコンポ作って index.js から呼び出す。その際 index.js からそれぞれのコンポへ props 渡してる。また、CommentDetail は ApprovalCard の子要素、ってだけ。  
 ![components.jpg](readme_resources/components.png)
 
+### seasons
+
+セクション 4 で作成したプロジェクト。  
+Class Components を使用。  
+参照者のロケーションといまが何月かによってテキストやスタイルを変えるらしい。
+
+TODO
+
 ## document.querySelector("#root") vs document.getElementById("root")
 
 `ReactDOM.render(<App />, document.querySelector("#root"));` が [レクチャ 13](https://www.udemy.com/course/react-redux/learn/lecture/12531070#notes)で使われている。
