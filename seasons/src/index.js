@@ -20,8 +20,7 @@ class App extends React.Component {
     );
   }
 
-  // React says we have to define render
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <>Error: {this.state.errorMessage}</>;
     }
@@ -31,6 +30,12 @@ class App extends React.Component {
     }
 
     return <Spinner message="Please accept location request" />;
+  }
+
+  // React says we have to define render
+  render() {
+    // className="border red"は実際は描画されない。ステートに応じてコンポを呼び分けているときに共通のclassを適用するための例として。
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
