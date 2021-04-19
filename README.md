@@ -40,6 +40,12 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 <img src="readme_resources/seasons_summer.png" alt="seasons_summer" width="40%" height="40%">
 <img src="readme_resources/seasons_winter.png" alt="seasons_winter" width="40%" height="40%">
 
+### pics
+
+検索ボックスを表示。入力されたテキストに応じた画像を表示。  
+V1 ではテキストに応じた画像を縦 1 列で表示。  
+V2 では横 x 列で表示。画像はサイズもまちまちって感じっぽい。
+
 ## document.querySelector("#root") vs document.getElementById("root")
 
 `ReactDOM.render(<App />, document.querySelector("#root"));` が [レクチャ 13](https://www.udemy.com/course/react-redux/learn/lecture/12531070#notes)で使われている。
