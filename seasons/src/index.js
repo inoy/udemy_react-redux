@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./components/SeasonDisplay";
+import Spinner from "./components/Spinner";
 
 // eslint-disable-next-line no-undef
 if (module.hot) {
@@ -29,7 +30,7 @@ class App extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <>Loading!</>;
+    return <Spinner />;
   }
 }
 

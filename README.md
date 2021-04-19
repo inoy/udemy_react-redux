@@ -90,6 +90,10 @@ if (module.hot) {
 
 適用方法として `semantic ui cdn` でぐぐって、[cdnjs](https://cdnjs.com/libraries/semantic-ui)ってとこから Tag/URL 取得するってやり方してる。
 
+- [ユーザカード](https://semantic-ui.com/views/card.html)
+- [ボタン](https://semantic-ui.com/elements/button.html)
+- [ローディング/読み込み中](https://semantic-ui.com/elements/loader.html)
+
 ## Class Components のライフサイクル
 
 [React - React.Component - コンポーネントライフサイクル](https://ja.reactjs.org/docs/react-component.html#the-component-lifecycle)
