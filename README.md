@@ -40,6 +40,11 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 <img src="readme_resources/seasons_summer.png" alt="seasons_summer" width="40%" height="40%">
 <img src="readme_resources/seasons_winter.png" alt="seasons_winter" width="40%" height="40%">
 
+読み込み中（1c84e7ba）とエラー画面（35e875ab）を用意してるのも実践的でお勉強になる。
+
+<img src="readme_resources/seasons_loading.png" alt="seasons_loading" width="40%" height="40%">
+<img src="readme_resources/seasons_error.png" alt="seasons_error" width="40%" height="40%">
+
 ### pics
 
 検索ボックスを表示。入力されたテキストに応じた画像を表示。  
