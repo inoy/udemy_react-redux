@@ -15,7 +15,14 @@ const SeasonDisplay = ({ lat }) => {
   console.log(season);
   const text =
     season === "winter" ? "Burr, it is chilly" : "Let's hit the beach";
-  return <div>{text}</div>;
+  const icon = season === "winter" ? "snowflake" : "sun";
+  return (
+    <div>
+      <i className={`${icon} icon`}></i>
+      <h1>{text}</h1>
+      <i className={`${icon} icon`} />
+    </div>
+  );
 };
 
 SeasonDisplay.propTypes = {
