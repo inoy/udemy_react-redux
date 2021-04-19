@@ -34,9 +34,11 @@ Style は [Semantic UI](https://semantic-ui.com/)、アバター画像とかテ�
 
 セクション 4 で作成したプロジェクト。  
 Class Components を使用。  
-参照者の[ロケーション](https://developer.mozilla.org/ja/docs/Web/API/Geolocation_API)（北半球 or 南半球）といまが何月かによってテキストやスタイルを変えるらしい。
+参照者の[ロケーション](https://developer.mozilla.org/ja/docs/Web/API/Geolocation_API)（北半球 or 南半球）と[いまが何月か](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth)によってテキストやスタイルを変えて表示するって割と表示としてはくだらない。ただ、  
+Class Components や state をどう使うか/書くか、[Class Components ライフサイクルがどうなっているか](#class-components-のライフサイクル)、[CSS をどう適用するか](#css-適用)などを学べる。
 
-TODO
+<img src="readme_resources/seasons_summer.png" alt="seasons_summer" width="40%" height="40%">
+<img src="readme_resources/seasons_winter.png" alt="seasons_winter" width="40%" height="40%">
 
 ## document.querySelector("#root") vs document.getElementById("root")
 
@@ -88,7 +90,18 @@ if (module.hot) {
 
 ## Semantic UI
 
-適用方法として `semantic ui cdn` でぐぐって、[cdnjs](https://cdnjs.com/libraries/semantic-ui)ってとこから Tag/URL 取得するってやり方してる。
+適用方法として `semantic ui cdn` でぐぐって、[cdnjs](https://cdnjs.com/libraries/semantic-ui)ってとこから ~~Tag/~~ URL 取得するってやり方してる。
+
+Tag 取得に含まれる`crossorigin="anonymous"`などの指定があると CORS 発生するっぽい？以下の指定の方が良いっぽい（詳しく理解できてない）。
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+/>
+```
+
+加えて、上記指定しても Chrome だと CORS で読み込み失敗するかも（ブラウザのキャッシュデータとか綺麗なら問題なく読み込めるのかも）。[この辺](https://webbibouroku.com/Blog/Article/cors-browser-setting)とか参考にブラウザ起動すると（`"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="C://Chrome dev session"`）表示できるようになるかも。
 
 - [ユーザカード](https://semantic-ui.com/views/card.html)
 - [ボタン](https://semantic-ui.com/elements/button.html)
