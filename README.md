@@ -129,6 +129,17 @@ Tag 取得に含まれる`crossorigin="anonymous"`などの指定があると CO
 260b692 参照  
 <img src="readme_resources/seasons_css.png" alt="seasons_css" width="50%" height="50%">
 
+## Controlled Component vs Uncontrolled Component
+
+b8681368 の変更にある通り、たとえば input タグの value を DOM?HTML? で直接書き換えている状態が Uncontrolled Component。Controlled Component は`value={this.state.term}`のように value を React/state で管理する状態。詳細は以下の React 公式の説明を参照。
+
+- [制御されたコンポーネント/Controlled Component](https://ja.reactjs.org/docs/forms.html#controlled-components)
+- [非制御コンポーネント/Uncontrolled Component](https://ja.reactjs.org/docs/uncontrolled-components.html)
+
+Class Components 利用時のみ関連する話？  
+Hooks System/Functional Components では（※1）、じゃけぇさんの TODO アプリみたいに親コンポ（App.js）で state を宣言して、子コンポに渡すのが一般的？もしそうだと Redux 要らないかも。  
+※1: Hooks System/Functional Components の特徴なのか書き手などそれ以外の特徴によるのか、うーん...🤔TODO
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 |
