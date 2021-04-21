@@ -52,7 +52,7 @@ V1 ではテキストに応じた画像を縦 1 列で表示。
 V2 では横 x 列で表示。画像はサイズもまちまちって感じっぽい。
 
 このプロジェクトも Class Components。  
-画像は [Unsplash](https://unsplash.com/) から取得する。
+画像は [Unsplash](https://unsplash.com/) から [axios](https://github.com/axios/axios) を使って取得する。
 
 TODO
 
