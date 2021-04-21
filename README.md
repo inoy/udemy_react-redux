@@ -140,6 +140,67 @@ Class Components 利用時のみ関連する話？
 Hooks System/Functional Components では（※1）、じゃけぇさんの TODO アプリみたいに親コンポ（App.js）で state を宣言して、子コンポに渡すのが一般的？もしそうだと Redux 要らないかも。  
 ※1: Hooks System/Functional Components の特徴なのか書き手などそれ以外の特徴によるのか、うーん...🤔TODO
 
+## Context Issue "this"
+
+Class Component で state 参照時 `TypeError: Cannot read property 'state' of undefined` が発生するケースと対処について。
+
+たとえば以下の onFormSubmit メソッドの console.log で発生する。これは console.log で参照している this には state プロパティが存在しないため。
+
+```js
+class SearchBar extends React.Component {
+  onFormSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.term);
+  }
+  // 省略
+  render() {
+    <form className="ui form" onSubmit={this.onFormSubmit}>
+```
+
+対処方法はいくつかあるけど、アロー関数にするのが書き方としてはシンプル。
+
+```js
+onFormSubmit = (event) => {
+  event.preventDefault();
+  console.log(this.state.term);
+};
+```
+
+アロー関数を利用するメリットの 1 つは 宣言された時点での this を bind して、呼び出し元のオブジェクトにかかわらず不変であること。
+
+詳細は以下参照。
+
+- [個人ブログ - 「TypeError: Cannot read property ‘state’ of undefined」に出会ったら Javascript の”this”について真剣に考えよう](https://applingo.tokyo/article/1422)
+- [Qiita - 【JavaScript】アロー関数式を学ぶついでに this も復習する話](https://qiita.com/mejileben/items/69e5facdb60781927929)
+
+これより下は直接あんまり関係ないかも。this に興味出てきて見たもの。
+
+- [MDN - アロー関数 - this を束縛しない](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/Arrow_functions#no_separate_this)
+- [個人ブログ【JavaScript の基礎】レキシカルスコープとクロージャを理解する](https://wemo.tech/904)
+- [Google JavaScript Style Guide 和訳 - JavaScript Language Rules - クロージャ](https://cou929.nu/data/google_javascript_style_guide/#id23)
+- [MDN - クロージャ](https://developer.mozilla.org/ja/docs/Web/JavaScript/Closures)
+- [MDN - WindowOrWorkerGlobalScope.setTimeout() - "this" 問題](https://developer.mozilla.org/ja/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout#the_this_problem)
+- [MDN - this - オブジェクトのメソッドとして](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/this#as_an_object_method)
+
+以前から以下のときに myFunc()で name 見えているのなんでだろとは気になってはいた。
+
+```js
+function makeFunc() {
+  var name = "Mozilla";
+  function displayName() {
+    alert(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+```
+
+ちゃんと理解できてないまま沼ってきた感ある 😌 以下が説明になっているの分かってはいるんだけどクロージャっていままでちゃんと考えてきたこともないのもあってなんか理解できてない感ある。あとで戻ってきて理解し直す ⇒ 一日経ってなんとなく分かってきたかも。[個人ブログ【JavaScript の基礎】レキシカルスコープとクロージャを理解する](https://wemo.tech/904) ← これめちゃ分かりやすい。
+
+> クロージャは、組み合わされた（囲まれた）関数と、その周囲の状態（レキシカル環境）への参照の組み合わせです。言い換えれば、クロージャは内側の関数から外側の関数スコープへのアクセスを提供します。JavaScript では、関数が作成されるたびにクロージャが作成されます。
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 |
@@ -148,3 +209,4 @@ Hooks System/Functional Components では（※1）、じゃけぇさんの TODO
 | 04/15 | 29   | 18   |
 | 04/16 | 64   | 36   |
 | 04/17 | 83   | 20   |
+| 04/18 | 91   | 09   |
