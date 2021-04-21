@@ -47,14 +47,16 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 
 ### pics
 
-検索ボックスを表示。入力されたテキストに応じた画像を表示。  
-V1 ではテキストに応じた画像を縦 1 列で表示。  
-V2 では横 x 列で表示。画像はサイズもまちまちって感じっぽい。
+これも Class Components。
 
-このプロジェクトも Class Components。  
-画像は [Unsplash](https://unsplash.com/) から [axios](https://github.com/axios/axios) を使って取得する。
+検索ボックスの Form を表示。Form が Submit されたら入力されているテキストに応じた画像を[Unsplash](https://unsplash.com/)から[axios](https://github.com/axios/axios) を使って取得して表示する。  
+ブラウザの width に応じて横 x 列で表示する。横 x 列表示のため CSS `display: grid`を指定。Unsplash から取得される画像サイズの縦横比は各々違う。CSS で横幅は`250px`固定にしたうえで、画像の高さを動的に取得して CSS `grid-row-end/gridRowEnd` を書き換え、隙間がムダに広くなるのを防止している。  
+[Unsplash から取得する画像は先頭 10 件のみ](https://unsplash.com/documentation#search-photos)でそれより後の画像を取得するような処理はない。
 
-TODO
+割と急にレベル高くなった感ある...。
+
+<img src="readme_resources/pics_column2.png" alt="pics_column2" width="30%">
+<img src="readme_resources/pics_column4.png" alt="pics_column4" width="60%">
 
 ## document.querySelector("#root") vs document.getElementById("root")
 
