@@ -13,4 +13,4 @@ parserOptions:
 plugins:
   - react
 rules:
-  react/state-in-constructor: [1, never]
+  react/state-in-constructor: [0, never]
