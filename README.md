@@ -206,6 +206,19 @@ myFunc();
 
 > クロージャは、組み合わされた（囲まれた）関数と、その周囲の状態（レキシカル環境）への参照の組み合わせです。言い換えれば、クロージャは内側の関数から外側の関数スコープへのアクセスを提供します。JavaScript では、関数が作成されるたびにクロージャが作成されます。
 
+最初の話に戻って、`console.log(this.state.term);`の this は`onSubmit={this.onFormSubmit}`で呼び出されてるんだから this は `「オブジェクトのメソッド」として呼び出された関数ではそのときのオブジェクト` = SearchBar になっている気はするんだけど、実際は strict モードだからか undefined。なんで undefined になっているかがうーん...🤔 ちゃんと理解できてない。
+
+```js
+class SearchBar extends React.Component {
+  onFormSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.term);
+  }
+  // 省略
+  render() {
+    <form className="ui form" onSubmit={this.onFormSubmit}>
+```
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 |
