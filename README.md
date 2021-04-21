@@ -51,6 +51,11 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 V1 ではテキストに応じた画像を縦 1 列で表示。  
 V2 では横 x 列で表示。画像はサイズもまちまちって感じっぽい。
 
+このプロジェクトも Class Components。  
+画像は [Unsplash](https://unsplash.com/) から取得する。
+
+TODO
+
 ## document.querySelector("#root") vs document.getElementById("root")
 
 `ReactDOM.render(<App />, document.querySelector("#root"));` が [レクチャ 13](https://www.udemy.com/course/react-redux/learn/lecture/12531070#notes)で使われている。
