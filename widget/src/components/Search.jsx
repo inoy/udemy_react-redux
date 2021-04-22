@@ -22,15 +22,23 @@ const Search = () => {
     search();
   }, [term]);
 
-  const renderedResults = results.map((result) => {
+  const renderedResults = results.map(({ pageid, title, snippet }) => {
     return (
-      <div className="item" key={result.pageid}>
+      <div className="item" key={pageid}>
+        <div className="right floated content">
+          <a
+            className="ui button"
+            href={`https://ja.wikipedia.org?curid=${pageid}`}
+          >
+            Go
+          </a>
+        </div>
         <div className="content">
-          <div className="header">{result.title}</div>
+          <div className="header">{title}</div>
         </div>
         <span
           /*dangerouslySetInnerHTMLはXSSのリスクがあるため要注意 今回はお勉強プロジェクトなので利用する */
-          dangerouslySetInnerHTML={{ __html: result.snippet }}
+          dangerouslySetInnerHTML={{ __html: snippet }}
         ></span>
         {/* 正規表を使うなどしてhtmlタグを削除する方法がQ&Aに記載されてる。dangerouslySetInnerHTML面白いし今回は使う。
         const regex = /(<([^>]+)>)/gi; const cleanSnippet = result.snippet.replace(regex, ""); */}
