@@ -19,7 +19,14 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-    term ? search() : setResults([]);
+    if (!term) {
+      setResults([]);
+      return;
+    }
+    const timeoutId = setTimeout(() => search(), 500);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [term]);
 
   const renderedResults = results.map(({ pageid, title, snippet }) => {
@@ -45,7 +52,6 @@ const Search = () => {
       </div>
     );
   });
-  console.log(renderedResults);
 
   return (
     <div>
