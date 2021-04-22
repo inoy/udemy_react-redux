@@ -29,7 +29,7 @@ const Accordion = ({ items }) => {
   );
 };
 
-Accordion.protoTypes = {
+Accordion.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 

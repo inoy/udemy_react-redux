@@ -252,6 +252,40 @@ const Accordion = ({ items }) => {
 
 [React - FAQ - イベントハンドラやコールバックにパラメータを渡すには？](https://ja.reactjs.org/docs/faq-functions.html#how-do-i-pass-a-parameter-to-an-event-handler-or-callback)
 
+## Linter/リンター
+
+### Class Components
+
+`npx create-react-app <app-name>`でプロジェクト作成後に`./node_modules/.bin/eslint --init`して対話的に設定ファイル作れば基本それで良い。ただ、以下のように Babel 使った state の初期化処理書くと違反になる。これは 94645888（※1）にあるように [babel-eslint](https://www.npmjs.com/package/babel-eslint) 導入して、rules に [react/state-in-constructor](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md) 指定すれば良い。  
+※1：後で見直して気付いたけどこれミスってる。babel-eslint が dependencies になっちゃってる。本来は devDependencies にするのが正しい。詳細な手順は[babel-eslint](https://www.npmjs.com/package/babel-eslint)を参照。
+
+```js
+class SearchBar extends React.Component {
+  state = { term: "" };
+```
+
+### Functional Components/Hooks System
+
+f3359c6 参照  
+widget プロジェクトで試して問題あれば後で追記 TODO
+
+[React - フックのルール - ESLint プラグイン](https://ja.reactjs.org/docs/hooks-rules.html#eslint-plugin)
+
+### Hooks System useState()
+
+Functional Component はレンダリングのたびに実行されるから useState が何回も実行される。たとえば以下で`const [activeIndex, setActiveIndex] = useState(null);`は Accordion コンポがレンダリングされるたびに実行されてる。
+
+```jsx
+const Accordion = ({ items }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+```
+
+なんで activeIndex を誤って初期化しちゃわないのかなーって気になったけど公式に以下記載があるし、どこかでコンポ毎に（？）useState なり useEffect なりの情報を順番ベースで覚えて管理/対応してるっぽい。
+
+[React - フックのルール - フックを呼び出すのはトップレベルのみ](https://ja.reactjs.org/docs/hooks-rules.html#only-call-hooks-at-the-top-level)
+
+> あらゆる早期 return 文よりも前の場所で呼び出してください。これを守ることで、コンポーネントがレンダーされる際に毎回同じ順番で呼び出されるということが保証されます。これが、複数回 useState や useEffect が呼び出された場合でも React がフックの状態を正しく保持するための仕組み
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
