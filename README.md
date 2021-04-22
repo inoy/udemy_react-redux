@@ -286,6 +286,13 @@ const Accordion = ({ items }) => {
 
 > あらゆる早期 return 文よりも前の場所で呼び出してください。これを守ることで、コンポーネントがレンダーされる際に毎回同じ順番で呼び出されるということが保証されます。これが、複数回 useState や useEffect が呼び出された場合でも React がフックの状態を正しく保持するための仕組み
 
+## ウィジェット - アコーディオン
+
+クリックされたら開くって仕組み。使えそう。 d389b04
+
+<img src="readme_resources/widget_accordion_close.png" alt="widget_accordion_close" width="40%" height="40%">
+<img src="readme_resources/widget_accordion_open.png" alt="widget_accordion_open" width="40%" height="40%">
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
