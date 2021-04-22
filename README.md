@@ -212,7 +212,7 @@ myFunc();
 
 > クロージャは、組み合わされた（囲まれた）関数と、その周囲の状態（レキシカル環境）への参照の組み合わせです。言い換えれば、クロージャは内側の関数から外側の関数スコープへのアクセスを提供します。JavaScript では、関数が作成されるたびにクロージャが作成されます。
 
-最初の話に戻って、`console.log(this.state.term);`の this は`onSubmit={this.onFormSubmit}`で呼び出されてるんだから this は `「オブジェクトのメソッド」として呼び出された関数ではそのときのオブジェクト` = SearchBar になっている気はするんだけど、実際は strict モードだからか undefined。なんで undefined になっているかがうーん...🤔 ちゃんと理解できてない。
+最初の話に戻って、`console.log(this.state.term);`の this は`onSubmit={this.onFormSubmit}`で呼び出されてるんだから this は `「オブジェクトのメソッド」として呼び出された関数ではそのときのオブジェクト` = SearchBar になっている気はするんだけど、実際は strict モードだからか undefined。なんで undefined になっているかがうーん...🤔 ちゃんと理解できてない。現時点の認識では、`onSubmit={this.onFormSubmit}`で、onSubmit には onFormSubmit メソッドへのポイントが代入される。onSubmit が実際に実行されるときには、[window](https://developer.mozilla.org/ja/docs/Web/API/Window)オブジェクトによって実行されるため、this は（strict-mode により）undefined になっている（合っているのだろうか 🤔）。
 
 ```js
 class SearchBar extends React.Component {
@@ -224,6 +224,33 @@ class SearchBar extends React.Component {
   render() {
     <form className="ui form" onSubmit={this.onFormSubmit}>
 ```
+
+TODO あとでちゃんと読む
+
+- [React - FAQ - そもそもバインドはなぜ必要なのか？](https://ja.reactjs.org/docs/faq-functions.html#why-is-binding-necessary-at-all)
+- [個人ブログ - Understanding JavaScript Function Invocation and "this"](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
+
+## イベントハンドラにアロー関数を使う理由
+
+× `<div className="title active" onClick={onTitleClick(index)}`  
+○ `<div className="title active" onClick={() => onTitleClick(index)}`  
+以下、現時点の認識。正確でないかも。  
+これは × の指定方法場合、呼び出された/render された時点で onTitleClick 関数が実行され onClick にはその実行結果が入ってしまい、onClick イベント発生時には onTitleClick 関数自体は実行されないため。  
+onClick イベントが発生したときに onTitleClick 関数を実行したい場合は、アロー関数を使うなどして関数へのポインタを onClick に代入しておく必要がある。
+
+```js
+const Accordion = ({ items }) => {
+  const onTitleClick = (index) => {
+    console.log("Title clicked", index);
+  };
+
+  const renderedItems = items.map(({ title, content }, index) => {
+    return (
+      <React.Fragment key={title}>
+        <div className="title active" onClick={() => onTitleClick(index)}>
+```
+
+[React - FAQ - イベントハンドラやコールバックにパラメータを渡すには？](https://ja.reactjs.org/docs/faq-functions.html#how-do-i-pass-a-parameter-to-an-event-handler-or-callback)
 
 ## 進捗
 
