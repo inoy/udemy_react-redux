@@ -58,6 +58,10 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 <img src="readme_resources/pics_column2.png" alt="pics_column2" width="30%">
 <img src="readme_resources/pics_column4.png" alt="pics_column4" width="60%">
 
+### widget
+
+TODO
+
 ## document.querySelector("#root") vs document.getElementById("root")
 
 `ReactDOM.render(<App />, document.querySelector("#root"));` が [レクチャ 13](https://www.udemy.com/course/react-redux/learn/lecture/12531070#notes)で使われている。
