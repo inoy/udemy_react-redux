@@ -28,7 +28,12 @@ const Search = () => {
         <div className="content">
           <div className="header">{result.title}</div>
         </div>
-        {result.snippet}
+        <span
+          /*dangerouslySetInnerHTMLはXSSのリスクがあるため要注意 今回はお勉強プロジェクトなので利用する */
+          dangerouslySetInnerHTML={{ __html: result.snippet }}
+        ></span>
+        {/* 正規表を使うなどしてhtmlタグを削除する方法がQ&Aに記載されてる。dangerouslySetInnerHTML面白いし今回は使う。
+        const regex = /(<([^>]+)>)/gi; const cleanSnippet = result.snippet.replace(regex, ""); */}
       </div>
     );
   });
