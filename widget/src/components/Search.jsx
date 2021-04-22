@@ -19,7 +19,7 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-    search();
+    term ? search() : setResults([]);
   }, [term]);
 
   const renderedResults = results.map(({ pageid, title, snippet }) => {
