@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const Accordion = ({ items }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const onTitleClick = (index) => {
-    console.log("Title clicked", index);
+    setActiveIndex(index);
   };
 
   const renderedItems = items.map(({ title, content }, index) => {
@@ -19,7 +21,12 @@ const Accordion = ({ items }) => {
       </React.Fragment>
     );
   });
-  return <div className="ui styled accordion">{renderedItems}</div>;
+  return (
+    <div className="ui styled accordion">
+      {renderedItems}
+      <h1>{activeIndex}</h1>
+    </div>
+  );
 };
 
 Accordion.protoTypes = {
