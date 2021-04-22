@@ -293,6 +293,16 @@ const Accordion = ({ items }) => {
 <img src="readme_resources/widget_accordion_close.png" alt="widget_accordion_close" width="40%" height="40%">
 <img src="readme_resources/widget_accordion_open.png" alt="widget_accordion_open" width="40%" height="40%">
 
+## state - Class Components vs Functional Components
+
+![state_class-components_vs_functional-components.png](readme_resources/state_class-components_vs_functional-components.png)
+
+## useEffect
+
+### 第 2 引数
+
+![useEffect_second_argument.png](readme_resources/useEffect_second_argument.png)
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
