@@ -23,13 +23,23 @@ const Search = () => {
       setResults([]);
       return;
     }
+    if (term && !results.length) {
+      // 初回画面描画時はsetTimeoutを待たず検索
+      search();
+      // search関数内でsetResultsされるまで即時検索防止のため即時空オブジェクトを設定
+      setResults([{}]);
+      return;
+    }
     const timeoutId = setTimeout(() => search(), 500);
     return () => {
       clearTimeout(timeoutId);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [term]);
 
   const renderedResults = results.map(({ pageid, title, snippet }) => {
+    // 即時検索防止のための空オブジェクトは無視
+    if (!pageid) return;
     return (
       <div className="item" key={pageid}>
         <div className="right floated content">

@@ -314,8 +314,8 @@ useEffect に指定する関数は、戻り値として関数ポインタをク�
 
 [React - フック API リファレンス - エフェクトのクリーンアップ](https://ja.reactjs.org/docs/hooks-reference.html#cleaning-up-an-effect)
 
-実装例は 参照。  
-この例では、検索フォームに指定された`検索ワード`を
+実装例は c8465706 参照。  
+検索 Form に入力された`検索ワード`を onChange で捕捉して、500ms 以内に onChange が再発生しなければ、つまり入力された`検索ワード`が変わらなければ検索 API 投げる例。
 
 ## 進捗
 
