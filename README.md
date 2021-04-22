@@ -1,17 +1,5 @@
 # [Modern React with Redux [2020 Update]](https://www.udemy.com/course/react-redux/)
 
-## Note: npm install -g create-react-app は非推奨
-
-`npx create-react-app my-app`が推奨
-
-> If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app
-
-> npx always uses the latest version.
-
-[Create React App - Getting Started - Quick Start](https://create-react-app.dev/docs/getting-started#quick-start)より引用
-
-それはそうなんだけど公式で npx 推奨はじめて知った
-
 ## プロジェクトについて
 
 ### jsx
@@ -61,6 +49,18 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 ### widget
 
 TODO
+
+## Note: npm install -g create-react-app は非推奨
+
+`npx create-react-app my-app`が推奨
+
+> If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app
+
+> npx always uses the latest version.
+
+[Create React App - Getting Started - Quick Start](https://create-react-app.dev/docs/getting-started#quick-start)より引用
+
+それはそうなんだけど公式で npx 推奨はじめて知った
 
 ## document.querySelector("#root") vs document.getElementById("root")
 
