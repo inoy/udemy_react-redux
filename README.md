@@ -235,8 +235,9 @@ TODO あとでちゃんと読む
 × `<div className="title active" onClick={onTitleClick(index)}`  
 ○ `<div className="title active" onClick={() => onTitleClick(index)}`  
 以下、現時点の認識。正確でないかも。  
-これは × の指定方法場合、呼び出された/render された時点で onTitleClick 関数が実行され onClick にはその実行結果が入ってしまい、onClick イベント発生時には onTitleClick 関数自体は実行されないため。  
-onClick イベントが発生したときに onTitleClick 関数を実行したい場合は、アロー関数を使うなどして関数へのポインタを onClick に代入しておく必要がある。
+× は 呼び出された/render された時点で onTitleClick 関数が実行され onClick にはその実行結果が入ってしまい、onClick イベント発生時には onTitleClick 関数自体は実行されないため。  
+onClick イベントが発生したときに onTitleClick 関数を実行したい場合は、○ の通り、アロー関数を使うなどして関数へのポインタを onClick に代入しておく必要がある。  
+引数がない場合は `onClick={onTitleClick}` で OK。
 
 ```js
 const Accordion = ({ items }) => {
