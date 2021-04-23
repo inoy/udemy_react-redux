@@ -1,11 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Dropdown = ({ options }) => {
-  const renderedOptions = options.map(({ value, label }) => {
+// eslint-disable-next-line no-unused-vars
+const Dropdown = ({ options, selected, onSelectedChange }) => {
+  const renderedOptions = options.map((option) => {
     return (
-      <div key={value} className="item">
-        {label}
+      <div
+        key={option.value}
+        className="item"
+        onClick={() => onSelectedChange(option)}
+      >
+        {option.label}
       </div>
     );
   });
@@ -16,7 +21,7 @@ const Dropdown = ({ options }) => {
         <label className="label">Select a Color</label>
         <div className="ui selection dropdown visible active">
           <i className="dropdown icon"></i>
-          <div className="text">Select Color</div>
+          <div className="text">{selected.label}</div>
           <div className="menu visible transition">{renderedOptions}</div>
         </div>
       </div>
@@ -26,6 +31,8 @@ const Dropdown = ({ options }) => {
 
 Dropdown.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  selected: PropTypes.object.isRequired,
+  onSelectedChange: PropTypes.func.isRequired,
 };
 
 export default Dropdown;
