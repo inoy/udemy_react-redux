@@ -267,8 +267,11 @@ class SearchBar extends React.Component {
 
 ### Functional Components/Hooks System
 
-f3359c6 参照  
-widget プロジェクトで試して問題あれば後で追記 TODO
+`./node_modules/.bin/eslint --init` したあと、[React - フックのルール - ESLint プラグイン](https://ja.reactjs.org/docs/hooks-rules.html#eslint-plugin)にある通り、eslint 設定ファイルへ Hooks 向け定義を追記すれば良い。
+
+f3359c6 参照。
+
+`react-hooks/exhaustive-deps` この rule は無効でも良いかも。もうちょっと useEffect 理解できてから追記 TODO
 
 [React - フックのルール - ESLint プラグイン](https://ja.reactjs.org/docs/hooks-rules.html#eslint-plugin)
 

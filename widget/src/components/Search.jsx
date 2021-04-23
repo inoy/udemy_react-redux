@@ -3,7 +3,6 @@ import axios from "axios";
 
 const Search = () => {
   const [term, setTerm] = useState("プログラミング");
-  // eslint-disable-next-line no-unused-vars
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -26,7 +25,7 @@ const Search = () => {
     if (term && !results.length) {
       // 初回画面描画時はsetTimeoutを待たず検索
       search();
-      // search関数内でsetResultsされるまで即時検索防止のため即時空オブジェクトを設定
+      // search関数でsetResultsされるまでは即時、検索が実行されてしまう。即時防止のためここで空オブジェクトを設定。
       setResults([{}]);
       return;
     }
