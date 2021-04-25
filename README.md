@@ -322,15 +322,27 @@ useEffect に指定する関数は、戻り値として関数ポインターを�
 
 ## イベントのバブリング
 
+### バブリングとは
+
+[The Modern JavaScript Tutorial - バブリング と キャプチャリング](https://ja.javascript.info/bubbling-and-capturing)
+
 ### 利用例 body 要素
 
 b89bee6 は、イベントバブリングを用いた実装例。ドロップダウンリストが開いた状態で、任意の場所がクリックされたらドロップダウンリストを閉じるって例。body 要素に イベントハンドラーを登録すれば、任意の要素でイベント発生時に発火させることができる。
 
 ### 実行順序
 
-[MDN - イベントへの入門 - イベントのバブリングとキャプチャリング](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture) を見ると以下の構造のとき、イベントハンドラーの実行順序はイベントバブリングにより div.item -> div.ui.selection -> body となるように思われる。実際には body -> div.item -> div.ui.selection の順。つまり、 d63d281 の通り console.log した状態でドロップダウンのアイテムをクリックすると `BODY CLICKED` -> `ITEM CLICKED` -> `DROPDOWN CLICKED` の順番で出力される。
+[MDN - イベントへの入門 - イベントのバブリングとキャプチャリング](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture) 参照。  
+d63d281 `BODY CLICKED` -> `ITEM CLICKED` -> `DROPDOWN CLICKED`
+
+TODO
 
 ![event_bubbling_order](readme_resources/event_bubbling_order.png)
+
+TODO
+
+[React - Blog - React v17.0 Release](https://ja.reactjs.org/blog/2020/08/10/react-v17-rc.html)  
+[The Modern JavaScript Tutorial - イベント移譲(Event delegation)](https://ja.javascript.info/event-delegation)
 
 ### 参考
 
