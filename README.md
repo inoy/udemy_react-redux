@@ -52,6 +52,11 @@ translate コンポを動作させるためには、.env ファイルを作成�
 
 [Google Cloud - Cloud Translation - REST リファレンス](https://cloud.google.com/translate/docs/reference/rest/v2/translate?hl=ja)
 
+ナビゲーションを react-router を利用せず実装する。  
+後のセクションで react-router も使うらしい。  
+今回 react-router を使わない理由は、互換性ない変更がたびたび入るらしく、ナビゲーションの基本的なアイデア・セオリーは知っておきましょう、だから使わず実装してみましょうってことみたい（ありがたい 😊）。  
+![navigation_in_react](resource/../readme_resources/navigation_in_react.png)
+
 TODO
 
 ## Note: npm install -g create-react-app は非推奨
