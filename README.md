@@ -48,6 +48,10 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 
 ### widget
 
+translate コンポを動作させるためには、.env ファイルを作成し、キー`REACT_APP_GOOGLE_TRANSLATE_API_KEY`を有効な API Key で定義する必要がある。
+
+[Google Cloud - Cloud Translation - REST リファレンス](https://cloud.google.com/translate/docs/reference/rest/v2/translate?hl=ja)
+
 TODO
 
 ## Note: npm install -g create-react-app は非推奨
