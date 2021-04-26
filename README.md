@@ -58,11 +58,11 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 左から順に以下の機能。
 
 1. [Accordion](widget/src/components/Accordion.jsx) は クリックされたら開いて詳細表示。同時に詳細表示してる項目は 1 個になるように他が開いたら閉じるってだけの単純なウィジェット。けどよく見るし実用性ありそう（よく見るだけに、自分で実装しなくてもライブラリなりで共通コンポとして使える OSS なりなんかはありそう）。詳細は [#ウィジェット-アコーディオン](#ウィジェット-アコーディオン) 参照。
-1. [Search](widget/src/components/Search.jsx) は検索ボックス表示して、そこに入力された*検索ワード* を[Wikipedia API](https://ja.wikipedia.org/w/api.php)で取得した Wikipedia 情報を表示するってウィジェット。検索ボックスに入力された*検索ワード*は`form#submit`されたら投げるんじゃなくて、`input.onChange`にイベントハンドラー設定して、`onChange`が止まってから 500ms 経過したら API 投げるって処理してておもろい。
+1. [Search](widget/src/components/Search.jsx) は検索ボックス表示して、そこに入力された*検索ワード* を[Wikipedia API](https://ja.wikipedia.org/w/api.php)で Wikipedia に投げて、取得結果を表示するってウィジェット。検索ボックスに入力された*検索ワード*は`form#submit`されたら投げるんじゃなくて、`input.onChange`にイベントハンドラー設定して、`onChange`が止まってから 500ms 経過したら API 投げるって処理してておもろい。
 1. [Dropdown](widget/src/components/Dropdown.jsx) はドロップダウンリスト表示して、クリックされたら開いて、リスト内の項目がクリックされたりそれ以外の任意の要素クリックされたら閉じるって、見た目的には全然おもしろくないウィジェット。ただ、イベントハンドラーのお勉強にめちゃなった。詳細は[#react-のイベントハンドラー](#react-のイベントハンドラー)参照。
 1. [Translate](widget/src/components/Translate.jsx)は、*テキストボックス*と*言語一覧のリストボックス*を表示して、そこに入力された情報を [Google Cloud の Cloud Translation](https://cloud.google.com/translate/docs/reference/rest/v2/translate?hl=ja) に投げて、翻訳結果を表示するってウィジェット。このウィジェットで新しく学ぶものはないかも？他 3 つのウィジェットの応用な感じかも。動作させるためには、.env ファイルを作成し、キー`REACT_APP_GOOGLE_TRANSLATE_API_KEY`を有効な `API Key` で定義する必要がある。
 
-ナビゲーションは react-router を利用せず実装する。ちなみに後のセクションで react-router も使うらしい。  
+ナビゲーションは react-router を利用せずスクラッチから実装する。ちなみに後のセクションで react-router も使うらしい。  
 今回 react-router を使わない理由は、react-router は互換性ない変更がたびたび入るらしく、ナビゲーションの基本的なアイデア・セオリーは知っておきましょう、だから使わず実装してみましょうってことみたい（ありがたい 😊）。  
 ![navigation_in_react](readme_resources/navigation_in_react.png)
 
