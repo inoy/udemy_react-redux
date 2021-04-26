@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Link = ({ className, href, children }) => {
-  console.log(children, typeof children);
   const onClick = (event) => {
     event.preventDefault();
+    window.history.pushState({}, "", href);
   };
+
   return (
     <a onClick={onClick} className={className} href={href}>
       {children}
