@@ -1,23 +1,15 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
+import ISO6391 from "iso-639-1-jp";
 
-const options = [
-  {
-    label: "Afrikaans",
-    value: "af",
-  },
-  {
-    label: "Arabic",
-    value: "ar",
-  },
-  {
-    label: "Hindi",
-    value: "hi",
-  },
-];
+const options = ISO6391.getAllCodes().map((code) => {
+  return { label: ISO6391.getName(code), value: code };
+});
 
 const Translate = () => {
-  const [language, setLanguage] = useState(options[0]);
+  const [language, setLanguage] = useState(
+    options.find((o) => o.value === "en")
+  );
   const [text, setText] = useState("");
 
   return (
