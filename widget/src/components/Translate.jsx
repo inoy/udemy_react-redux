@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Dropdown from "./Dropdown";
 import ISO6391 from "iso-639-1-jp";
+import Dropdown from "./Dropdown";
+import Convert from "./Convert";
 
 const options = ISO6391.getAllCodes().map((code) => {
   return { label: ISO6391.getName(code), value: code };
@@ -26,6 +27,9 @@ const Translate = () => {
         selected={language}
         onSelectedChange={setLanguage}
       />
+      <hr />
+      <h3 className="ui header">Output</h3>
+      <Convert language={language} text={text} />
     </>
   );
 };
