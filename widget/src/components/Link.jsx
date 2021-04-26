@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const Link = ({ className, href, children }) => {
   const onClick = (event) => {
+    // TODO Mac環境(event.metaKey)で動作確認 新規タブでリンク先が開かれること
     if (event.metaKey || event.ctrlKey) {
       return;
     }

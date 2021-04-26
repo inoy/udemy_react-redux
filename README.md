@@ -361,7 +361,7 @@ b89bee6 は、ドロップダウンリストが開いた状態で、任意の場
 
 `document.body.addEventListener`の第 3 引数に [{capture: true} を指定しないと指定したイベントハンドラーは実行されない](https://ja.reactjs.org/blog/2020/08/10/react-v17-rc.html#fixing-potential-issues)。
 
-[b89bee6 の該当行を以下に抜粋。](https://gitlab.paas.hitachi-solutions.com/yosuke.inoue.kc/udemy_react-redux/-/commit/b89bee61ae0d3e46fabd7c489bf5c8078a4e126f#8b5f921d12a411cbcab4f244562163aa4a660846_7_9)
+b89bee6 の該当行を以下に抜粋。
 
 ```js
 const Dropdown = ({ options, selected, onSelectedChange }) => {
@@ -373,6 +373,15 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 ```
 
 これは、ルート DOM コンテナで `e.stopPropagation()` されているから？公式で明記されている箇所が見当たらない。認識誤っているかも。
+
+## ナビゲーション、router
+
+react-router を利用せずナビゲーション機能を実装する方法。
+
+詳細は [Udemy - Modern React with Redux [2020 Update] - セクション 13: Navigation From Scratch](https://www.udemy.com/course/react-redux/learn/lecture/20787914) を参照。
+
+widget プロジェクトの [App.jsx](widget/src/App.jsx#L44-61)、[Header.jsx](widget/src/components/Header.jsx)、[Link.jsx](widget/src/components/Link.jsx)、[Route.jsx](widget/src/components/Route.jsx)あたりが対応する実装。  
+もう少し理解できてから追記 TODO。
 
 ## 進捗
 
