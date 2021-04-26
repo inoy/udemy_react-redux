@@ -112,7 +112,7 @@ if (module.hot) {
 
 ## Semantic UI
 
-適用方法として `semantic ui cdn` でぐぐって、[cdnjs](https://cdnjs.com/libraries/semantic-ui)ってとこから ~~Tag/~~ URL 取得するってやり方してる。
+適用方法として _semantic ui cdn_ でぐぐって、[cdnjs](https://cdnjs.com/libraries/semantic-ui)ってとこから ~~Tag/~~ URL 取得するってやり方してる。
 
 Tag 取得に含まれる`crossorigin="anonymous"`などの指定があると CORS 発生するっぽい？以下の指定の方が良いっぽい（詳しく理解できてない）。
 
@@ -153,7 +153,7 @@ Hooks System/Functional Components では（※1）、じゃけぇさんの TODO
 
 ## Context Issue "this"
 
-Class Component で state 参照時 `TypeError: Cannot read property 'state' of undefined` が発生するケースと対処について。
+Class Component で state 参照時 _TypeError: Cannot read property 'state' of undefined_ が発生するケースと対処について。
 
 たとえば以下の onFormSubmit メソッドの console.log で発生する。これは console.log で参照している this には state プロパティが存在しないため。
 
@@ -212,7 +212,7 @@ myFunc();
 
 > クロージャは、組み合わされた（囲まれた）関数と、その周囲の状態（レキシカル環境）への参照の組み合わせです。言い換えれば、クロージャは内側の関数から外側の関数スコープへのアクセスを提供します。JavaScript では、関数が作成されるたびにクロージャが作成されます。
 
-最初の話に戻って、`console.log(this.state.term);`の this は`onSubmit={this.onFormSubmit}`で呼び出されてるんだから this は `「オブジェクトのメソッド」として呼び出された関数ではそのときのオブジェクト` = SearchBar になっている気はするんだけど、実際は strict モードだからか undefined。なんで undefined になっているかがうーん...🤔 ちゃんと理解できてない。現時点の認識では、`onSubmit={this.onFormSubmit}`で、onSubmit には onFormSubmit メソッドへのポイントが代入される。onSubmit が実際に実行されるときには、[window](https://developer.mozilla.org/ja/docs/Web/API/Window)オブジェクトによって実行されるため、this は（strict-mode により）undefined になっている（合っているのだろうか 🤔）。
+最初の話に戻って、`console.log(this.state.term);`の this は`onSubmit={this.onFormSubmit}`で呼び出されてるんだから this は _「オブジェクトのメソッド」として呼び出された関数ではそのときのオブジェクト_ = SearchBar になっている気はするんだけど、実際は strict モードだからか undefined。なんで undefined になっているかがうーん...🤔 ちゃんと理解できてない。現時点の認識では、`onSubmit={this.onFormSubmit}`で、onSubmit には onFormSubmit メソッドへのポイントが代入される。onSubmit が実際に実行されるときには、[window](https://developer.mozilla.org/ja/docs/Web/API/Window)オブジェクトによって実行されるため、this は（strict-mode により）undefined になっている（合っているのだろうか 🤔）。
 
 ```js
 class SearchBar extends React.Component {
@@ -318,7 +318,7 @@ useEffect に指定する関数は、戻り値として関数ポインターを�
 [React - フック API リファレンス - エフェクトのクリーンアップ](https://ja.reactjs.org/docs/hooks-reference.html#cleaning-up-an-effect)
 
 実装例は c8465706 参照。  
-検索 Form に入力された`検索ワード`を onChange で捕捉して、500ms 以内に onChange が再発生しなければ、つまり入力された`検索ワード`が変わらなければ検索 API 投げる例。
+検索 Form に入力された*検索ワード*を onChange で捕捉して、500ms 以内に onChange が再発生しなければ、つまり入力された*検索ワード*が変わらなければ検索 API 投げる例。
 
 ## React のイベントハンドラー
 
