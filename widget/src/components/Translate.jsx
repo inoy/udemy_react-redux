@@ -11,7 +11,7 @@ const Translate = () => {
   const [language, setLanguage] = useState(
     options.find((o) => o.value === "en")
   );
-  const [text, setText] = useState("");
+  const [text, setText] = useState("りんご");
 
   return (
     <>
