@@ -46,6 +46,10 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 <img src="readme_resources/pics_column2.png" alt="pics_column2" width="30%">
 <img src="readme_resources/pics_column4.png" alt="pics_column4" width="60%">
 
+### videos
+
+セクション 11（116 ～ 136）で使用するプロジェクト。このセクションは pics プロジェクトのおさらい・Class Components のおさらいのためスキップ。create-react-app した直後の状態のまま。
+
 ### widget
 
 4 種類のウィジェットをつくって、それをナビゲーション機能で切り替えられるようにしましょうってプロジェクト。
@@ -67,6 +71,10 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 ![navigation_in_react](readme_resources/navigation_in_react.png)
 
 実装の詳細は [#ナビゲーション router](#ナビゲーションrouter) 参照。
+
+### videoshooks
+
+Class Components で作成されたプロジェクトを Hooks System に変更することで、Hooks System の理解を深めましょうってプロジェクト。
 
 ## Note: npm install -g create-react-app は非推奨
 
