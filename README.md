@@ -320,37 +320,50 @@ useEffect に指定する関数は、戻り値として関数ポインターを�
 実装例は c8465706 参照。  
 検索 Form に入力された`検索ワード`を onChange で捕捉して、500ms 以内に onChange が再発生しなければ、つまり入力された`検索ワード`が変わらなければ検索 API 投げる例。
 
-## イベントのバブリング
+## React のイベントハンドラー
 
-### バブリングとは
+React でイベントハンドラーを登録すると、指定の要素に直接登録するのではなく、[ルート DOM コンテナに対してアタッチ](https://ja.reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation) される。
 
-[The Modern JavaScript Tutorial - バブリング と キャプチャリング](https://ja.javascript.info/bubbling-and-capturing)
+なんでそんなことをしているかは以下参照。  
+[React - Blog - React v17.0 Release - イベントデリゲーションに関する変更](https://ja.reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation)
 
-### 利用例 body 要素
+> ほとんどのイベントでは、実際には React はあなたが宣言した DOM ノードにイベントハンドラをアタッチするのではありません。代わりに、イベントタイプごとにハンドラを 1 つだけ、document ノードに直接アタッチします。これはイベントデリゲーション（event delegation; イベントの委譲）と呼ばれます。大きなアプリケーションツリーではパフォーマンス面で有利であるということに加え、これによりイベントのリプレイといった新機能も追加しやすくなります。
 
-b89bee6 は、イベントバブリングを用いた実装例。ドロップダウンリストが開いた状態で、任意の場所がクリックされたらドロップダウンリストを閉じるって例。body 要素に イベントハンドラーを登録すれば、任意の要素でイベント発生時に発火させることができる。
+> React 17 では、React は document レベルにイベントハンドラをアタッチしないようになります。代わりに、あなたが React ツリーをレンダーしようとしているルート DOM コンテナに対してアタッチするようになります。
 
-### 実行順序
+親/祖先 DOM に対してイベントハンドラーを登録しているのに、意図した通りにイベントハンドラーが実行される理由はイベント移譲（Event delegation）を利用しているため。イベント移譲の詳細は [イベント移譲(Event delegation)](https://ja.javascript.info/event-delegation) を参照。
 
-[MDN - イベントへの入門 - イベントのバブリングとキャプチャリング](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture) 参照。  
-d63d281 `BODY CLICKED` -> `ITEM CLICKED` -> `DROPDOWN CLICKED`
+### バブリング、キャプチャリング
 
-TODO
+たとえば d63d281 で、div.item をクリックすると、コンソール出力は`BODY CLICKED` -> `ITEM CLICKED` -> `DROPDOWN CLICKED`の順でされる。これは、body は capture フェーズで実行 -> div.item はターゲットフェーズで実行 -> div.ui.selection はバブリングフェーズで実行 のため。
 
 ![event_bubbling_order](readme_resources/event_bubbling_order.png)
 
-TODO
+詳細は以下を参照。
 
-[React - Blog - React v17.0 Release](https://ja.reactjs.org/blog/2020/08/10/react-v17-rc.html)  
-[The Modern JavaScript Tutorial - イベント移譲(Event delegation)](https://ja.javascript.info/event-delegation)
+- [The Modern JavaScript Tutorial - バブリング と キャプチャリング](https://ja.javascript.info/bubbling-and-capturing#ref-1499)
+- [MDN - イベントへの入門 - イベントのバブリングとキャプチャリング](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling_and_capture)
 
-### 参考
+### バブリング/キャプチャリングの利用例
 
-[Qiita - React v17 何が変わった？ - アップデートの際気をつけること](https://qiita.com/irico/items/1129cf233562a668670a#%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88%E3%81%AE%E9%9A%9B%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B%E3%81%93%E3%81%A8)
+b89bee6 は、ドロップダウンリストが開いた状態で、任意の場所がクリックされたらドロップダウンリストを閉じるって例。`document.body.addEventListener`により body にイベントハンドラーを登録しておけば、任意の要素でイベント発生時に発火させることができる。
 
-> document.addEventListener(...) を記述している際は要注意です。
-> 上記イベントを登録し、react のイベント内で e.stopPropagation()を呼び出していても今までの react バージョンでは document のカスタムイベントを走らせることができました。  
-> しかし、v17 では e.stopPropagation()により伝播が止まってしまいます。リクエスト通りになるということですね。
+### document.body.addEventListener
+
+`document.body.addEventListener`の第 3 引数に [{capture: true} を指定しないと指定したイベントハンドラーは実行されない](https://ja.reactjs.org/blog/2020/08/10/react-v17-rc.html#fixing-potential-issues)。
+
+[b89bee6 の該当行を以下に抜粋。](https://gitlab.paas.hitachi-solutions.com/yosuke.inoue.kc/udemy_react-redux/-/commit/b89bee61ae0d3e46fabd7c489bf5c8078a4e126f#8b5f921d12a411cbcab4f244562163aa4a660846_7_9)
+
+```js
+const Dropdown = ({ options, selected, onSelectedChange }) => {
+  useEffect(() => {
+    document.body.addEventListener("click", () => setOpen(false), {
+      capture: true,
+    });
+  }, []);
+```
+
+これは、ルート DOM コンテナで `e.stopPropagation()` されているから？公式で明記されている箇所が見当たらない。認識誤っているかも。
 
 ## 進捗
 
@@ -365,3 +378,7 @@ TODO
 | 04/21 | 136  | 21   | セクション 11（116 ～ 136）はスキップ。pics プロジェクトのおさらいのため。 |
 | 04/22 | 167  | 32   |                                                                            |
 | 04/23 | 182  | 16   |                                                                            |
+
+```
+
+```
