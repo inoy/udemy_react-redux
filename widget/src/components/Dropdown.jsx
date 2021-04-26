@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ label, options, selected, onSelectedChange }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -40,7 +40,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   return (
     <div className="ui form" ref={ref}>
       <div className="field">
-        <label className="label">Select a Color</label>
+        <label className="label">{label}</label>
         <div
           className={`ui selection dropdown ${open ? "visible active" : ""}`}
           onClick={() => setOpen(!open)}
@@ -57,6 +57,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 };
 
 Dropdown.propTypes = {
+  label: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
   selected: PropTypes.object.isRequired,
   onSelectedChange: PropTypes.func.isRequired,
