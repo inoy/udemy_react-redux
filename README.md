@@ -418,6 +418,23 @@ widget プロジェクトの [App.jsx](widget/src/App.jsx#L44-61)、[Header.jsx]
 
 ![what_is_redux](readme_resources/what_is_redux.png)
 
+### Redux を採用するメリット
+
+- Redux を採用しない場合 -> アプリが巨大になっていくと複雑さが指数関数的に増してく
+- Redux を採用する場合 -> アプリが巨大になっても複雑さはアプリ規模に比例して増えていく
+
+<img src="readme_resources/complexity_without_redux.png" alt="complexity_without_redux" width="40%" height="40%">
+<img src="readme_resources/complexity_with_redux.png" alt="complexity_with_redux" width="40%" height="40%">
+
+[230. Important Redux Notes](https://www.udemy.com/course/react-redux/learn/lecture/12531416) で説明されている。
+
+Redux を導入しているアプリの場合、データやその取り扱いを変更したい場合、Action Creator を理解してそれを修正すれば良いからって説明。  
+Redux をまだ理解できてないだけに、そういうもんなのかなあ 🤔 って感じ。
+
+ただ Redux 自体の理解が最初は難しいよとは説明されてる。分かってきちゃえばめちゃ簡単だよとも。上記の複雑さのグラフが Redux を採用する場合 Complexity が割と高いところからはじまっているところからもわかる通り、小規模のアプリだったら Redux は使わないが無難ではあるのかも。
+
+![redux_difficulty_curve](readme_resources/redux_difficulty_curve.png)
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
