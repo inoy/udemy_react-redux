@@ -76,7 +76,14 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 
 Class Components で作成されたプロジェクトを Hooks System に変更することで、Hooks System の理解を深めましょうってプロジェクト。
 
-## Note: npm install -g create-react-app は非推奨
+### TODO
+
+![redux_insurance_analogy](readme_resources/redux_insurance_analogy.png)
+![redux_insurance_analogy_management.png](readme_resources/redux_insurance_analogy_management.png)
+
+![redux_cycle_and_insurance_company](readme_resources/redux_cycle_and_insurance_company.png)
+
+## npm install -g create-react-app は非推奨
 
 `npx create-react-app my-app`が推奨
 
@@ -87,11 +94,6 @@ Class Components で作成されたプロジェクトを Hooks System に変更�
 [Create React App - Getting Started - Quick Start](https://create-react-app.dev/docs/getting-started#quick-start)より引用
 
 それはそうなんだけど公式で npx 推奨はじめて知った
-
-### TODO
-
-![redux_insurance_analogy](readme_resources/redux_insurance_analogy.png)
-![redux_insurance_analogy_management.png](readme/../readme_resources/redux_insurance_analogy_management.png)
 
 ## document.querySelector("#root") vs document.getElementById("root")
 
