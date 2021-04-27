@@ -400,6 +400,17 @@ react-router を利用せずナビゲーション機能を実装する方法。
 widget プロジェクトの [App.jsx](widget/src/App.jsx#L44-61)、[Header.jsx](widget/src/components/Header.jsx)、[Link.jsx](widget/src/components/Link.jsx)、[Route.jsx](widget/src/components/Route.jsx)あたりが対応する実装。  
 もう少し理解できてから追記 TODO。
 
+## カスタムフック
+
+あとで読む TODO
+[React - 独自フックの作成](https://ja.reactjs.org/docs/hooks-custom.html)
+
+## Redux
+
+### Redux とは
+
+![what_is_redux](readme_resources/what_is_redux.png)
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
