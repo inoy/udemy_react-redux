@@ -91,6 +91,7 @@ Class Components で作成されたプロジェクトを Hooks System に変更�
 ### TODO
 
 ![redux_insurance_analogy](readme_resources/redux_insurance_analogy.png)
+![redux_insurance_analogy_management.png](readme/../readme_resources/redux_insurance_analogy_management.png)
 
 ## document.querySelector("#root") vs document.getElementById("root")
 
