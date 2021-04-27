@@ -88,6 +88,10 @@ Class Components で作成されたプロジェクトを Hooks System に変更�
 
 それはそうなんだけど公式で npx 推奨はじめて知った
 
+### TODO
+
+![redux_insurance_analogy](readme_resources/redux_insurance_analogy.png)
+
 ## document.querySelector("#root") vs document.getElementById("root")
 
 `ReactDOM.render(<App />, document.querySelector("#root"));` が [レクチャ 13](https://www.udemy.com/course/react-redux/learn/lecture/12531070#notes)で使われている。
