@@ -5,6 +5,12 @@ import { createStore } from "redux";
 import App from "./components/App";
 import reducers from "./reducers";
 
+// eslint-disable-next-line no-undef
+if (module.hot) {
+  // eslint-disable-next-line no-undef
+  module.hot.accept();
+}
+
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
     <App />
