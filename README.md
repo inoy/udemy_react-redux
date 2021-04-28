@@ -435,6 +435,10 @@ Redux をまだ理解できてないだけに、そういうもんなのかな�
 
 ![redux_difficulty_curve](readme_resources/redux_difficulty_curve.png)
 
+### データローディング Class Components の場合によく採られる方法
+
+![redux_general_data_loading](readme_resources/redux_general_data_loading.png)
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
