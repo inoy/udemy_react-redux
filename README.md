@@ -439,6 +439,10 @@ Redux をまだ理解できてないだけに、そういうもんなのかな�
 
 ![redux_general_data_loading](readme_resources/redux_general_data_loading.png)
 
+### Redux Thunk
+
+![redux_thunk_behind_the_scenes](readme_resources/redux_thunk_behind_the_scenes.png)
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
