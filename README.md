@@ -443,6 +443,22 @@ Redux をまだ理解できてないだけに、そういうもんなのかな�
 
 ![redux_thunk_behind_the_scenes](readme_resources/redux_thunk_behind_the_scenes.png)
 
+### JavaScript Object mutations
+
+![javascript_object_mutations.png](readme_resources/javascript_object_mutations.png)
+
+オブジェクトからプロパティを削除する方法で [lodash](https://lodash.com/docs/4.17.15#omit) を使わない方法として[以下が挙げられている](https://stackoverflow.com/questions/34698905/how-can-i-clone-a-javascript-object-except-for-one-key)。
+
+```js
+const data = {
+  type: "add",
+  payload: "payload",
+};
+const { type, ...coords } = data;
+```
+
+変数 type は lint で warning/error になるかと思いきや、デフォルトの設定でもならないっぽい？なる場合でも`eslint no-unused-vars: ["error", { "ignoreRestSiblings": true }]` で [無視できるっぽい](https://github.com/eslint/eslint/commit/c59a0ba)。
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
