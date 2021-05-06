@@ -89,6 +89,8 @@ React Router お勉強
 
 [GoogleAPI の OAuth2.0 スコープ](https://developers.google.com/identity/protocols/oauth2/scopes)
 
+[gapi.auth2.getAuthInstance](https://developers.google.com/identity/sign-in/web/reference#gapiauth2getauthinstance)
+
 TODO
 
 ## npm install -g create-react-app は非推奨
