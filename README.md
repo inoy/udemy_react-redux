@@ -76,12 +76,9 @@ Class Components や state をどう使うか/書くか、[Class Components ラ�
 
 Class Components で作成されたプロジェクトを Hooks System に変更することで、Hooks System の理解を深めましょうってプロジェクト。
 
-### TODO
+### streams
 
-![redux_insurance_analogy](readme_resources/redux_insurance_analogy.png)
-![redux_insurance_analogy_management.png](readme_resources/redux_insurance_analogy_management.png)
-
-![redux_cycle_and_insurance_company](readme_resources/redux_cycle_and_insurance_company.png)
+TODO
 
 ## npm install -g create-react-app は非推奨
 
