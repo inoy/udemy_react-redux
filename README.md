@@ -91,6 +91,8 @@ React Router お勉強
 
 [gapi.auth2.getAuthInstance](https://developers.google.com/identity/sign-in/web/reference#gapiauth2getauthinstance)
 
+[Github - redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
+
 TODO
 
 ## npm install -g create-react-app は非推奨
@@ -493,3 +495,4 @@ const { type, ...coords } = data;
 | 04/28 | 257  | 19   |                                                                            |
 | 04/30 | 278  | 22   |                                                                            |
 | 05/05 | 286  | 09   |                                                                            |
+| 05/06 | 319  | 34   |                                                                            |
