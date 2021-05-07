@@ -97,6 +97,8 @@ React Router お勉強
 
 > Also try opening http://localhost:3000/?debug_session=123, click around, and then refresh. You should see that all actions have been restored from the local storage.
 
+[npm - redux-form](https://www.npmjs.com/package/redux-form)
+
 TODO
 
 ## npm install -g create-react-app は非推奨
@@ -121,7 +123,7 @@ TODO
 
 ## create-react-app(CRA)で作成したプロジェクトの ホット/ライブ リロード
 
-React の特定のバージョンでホットリロードが有効にならないバグがあるっぽい。というか実際、CRA でプロジェクト作成 (`"react": "^17.0.2"`) した後、src ディレクトリ 空にして index.js 一から書くと起こる。
+React の特定のバージョンでホットリロードが有効にならないバグがあるっぽい。というか実際、CRA でプロジェクト作成 (`"react": "^17.0.2"`) した後、src ディレクトリ 空にして index.js 一から書くと起こる。  
 [Hot Reload stopped working with React "^17.0.1" #9904](https://github.com/facebook/create-react-app/issues/9904)
 
 Udemy で紹介された以下で回避はできるっぽい。
