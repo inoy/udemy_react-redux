@@ -487,6 +487,33 @@ const { type, ...coords } = data;
 
 ![react-router-link](readme_resources/react-router-link.png)
 
+### props
+
+react-router-dom.Route に指定したコンポーネントには、props として match などの情報が渡される。
+
+```js
+const App = () => {
+  return (
+    <div className="ui container">
+      <Router history={history}>
+        <div>
+          <Route path="/streams/edit/:id" exact component={StreamEdit} />
+        </div>
+      </Router>
+    </div>
+  );
+};
+```
+
+```js
+const StreamEdit = (props) => {
+  console.log(props);
+  return <>StreamEdit</>;
+};
+```
+
+![](readme_resources/react-router-dom-props.png)
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
