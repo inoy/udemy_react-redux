@@ -21,7 +21,8 @@ const streamReducer = (state = {}, action) => {
         state
       );
     case DELETE_STREAM:
-      return state.filter((s) => s !== action.payload.id);
+      const { [action.payload.id]: omitted, ...rest } = state;
+      return rest;
     default:
       return state;
   }
