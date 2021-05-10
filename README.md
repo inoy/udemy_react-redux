@@ -103,7 +103,7 @@ React Router お勉強
 
 [npm - json-server](https://www.npmjs.com/package/json-server), [github - lowdb](https://github.com/typicode/lowdb)
 
-[MDN - Stacking Context（重ね合わせコンテキスト）](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+[React - ポータル](https://ja.reactjs.org/docs/portals.html), [MDN - Stacking Context（重ね合わせコンテキスト）](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context), [Semantic-UI - Modal - Actions](https://semantic-ui.com/modules/modal.html#actions)
 
 TODO
 
