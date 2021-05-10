@@ -514,6 +514,67 @@ const StreamEdit = (props) => {
 
 ![](readme_resources/react-router-dom-props.png)
 
+## Redux Form
+
+[npm- redux-form](https://www.npmjs.com/package/redux-form)
+
+現状 redux-form の利用は以下の理由から推奨されていない。
+
+> you should not put your form state in Redux
+
+代替として [npm - react-final-form](https://www.npmjs.com/package/react-final-form) が挙げられており、react-final-form は redux-form と似た IF のようなので、redux-form 学んでおく。
+
+### フォームの InitialValues（初期値）
+
+reduxForm を適用したコンポーネント/要素に、属性 initialValues を指定するとそれがフォームの InitialValues になる。
+
+```js
+class StreamForm extends React.Component {
+  render() {
+    return (
+      <form
+        className="ui form error"
+        onSubmit={this.props.handleSubmit(this.onSubmit)}
+      >
+        <Field name="title" component={this.renderInput} label="Enter Title" />
+        <Field
+          name="description"
+          component={this.renderInput}
+          label="Enter Description"
+        />
+        <button className="ui button primary">Submit</button>
+      </form>
+    );
+  }
+}
+
+export default reduxForm({
+  form: "streamForm",
+  validate,
+})(StreamForm);
+```
+
+```js
+class StreamEdit extends React.Component {
+  render() {
+    return (
+      <>
+        <h3>Edit a Stream</h3>
+        <StreamForm
+          onSubmit={this.onSubmit}
+          initialValues={{
+            title: this.props.stream.title,
+            description: this.props.stream.description,
+          }}
+        />
+      </>
+    );
+  }
+}
+```
+
+initialValues へ指定するオブジェクトのキーは Field に指定した name と一致させる必要がある。
+
 ## 進捗
 
 | 日付  | 現在 | 進捗 | 備考                                                                       |
@@ -534,3 +595,4 @@ const StreamEdit = (props) => {
 | 05/05 | 286  | 09   |                                                                            |
 | 05/06 | 319  | 34   |                                                                            |
 | 05/07 | 349  | 31   |                                                                            |
+| 05/09 | 364  | 16   |                                                                            |
