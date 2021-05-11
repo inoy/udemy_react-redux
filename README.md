@@ -109,6 +109,10 @@ React Router お勉強
 
 TODO
 
+### translate
+
+TODO
+
 ## npm install -g create-react-app は非推奨
 
 `npx create-react-app my-app`が推奨
@@ -578,6 +582,12 @@ class StreamEdit extends React.Component {
 ```
 
 initialValues へ指定するオブジェクトのキーは Field に指定した name と一致させる必要がある。
+
+## Note
+
+Functional Components - useContext
+
+TODO
 
 ## 進捗
 
