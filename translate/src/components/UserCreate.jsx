@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Field from "./Field";
 import Button from "./Button";
 
 export default class UserCreate extends Component {
-  static propTypes = {
-    prop: PropTypes,
-  };
+  static propTypes = {};
 
   render() {
     return (

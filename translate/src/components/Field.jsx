@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 export default class Field extends Component {
-  static propTypes = {
-    prop: PropTypes,
-  };
+  static propTypes = {};
 
   render() {
     return (
