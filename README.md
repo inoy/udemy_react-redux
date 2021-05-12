@@ -603,7 +603,7 @@ export default combineReducers({
 });
 ```
 
-streams を扱う actions という、割と auth のステートと距離のある処理から、getState/Redux を通じて雑に auth の情報参照できるのは書きやすい。
+streams を扱う actions という、割と auth のステートと距離のある処理から、getState/Redux を通じて雑に auth の情報参照できるのは、コードを書きやすい気はする。
 
 blob/336e6dae184575928c39875f718e7f479cb1876c/streams/client/src/actions/index.js#L23
 
@@ -639,3 +639,4 @@ export const createStreams = (formValues) => async (dispatch, getState) => {
 | 05/09 | 364  | 16   |                                                                            |
 | 05/10 | 381  | 18   |                                                                            |
 | 05/11 | 396  | 16   |                                                                            |
+| 05/13 | 419  | 24   |                                                                            |
