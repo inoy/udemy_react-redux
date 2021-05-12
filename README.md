@@ -583,11 +583,38 @@ class StreamEdit extends React.Component {
 
 initialValues へ指定するオブジェクトのキーは Field に指定した name と一致させる必要がある。
 
-## Note
+## Redux vs Context
 
-Functional Components - useContext
+![redux_vs_context.jpg](readme_resources/redux_vs_context.png)
 
-TODO
+2 年前（2020 年頃？）のことなので、いまだと事情は違いそう。
+
+最新の Context の事情がまだわかってないけど、Hard to Build a 'store' component with cross cutting concerns はいまもそう？だと確かに Redux 使いやすくはありそう。
+
+Redux 管理下に置かれた state はどの actions からも getState を通じて参照することができる。たとえば以下の通り auth, form と streams って状態を Redux を管理しているとき。
+
+blob/336e6dae184575928c39875f718e7f479cb1876c/streams/client/src/reducers/index.jsx
+
+```js
+export default combineReducers({
+  auth: authReducer,
+  form: formReducer,
+  streams: streamReducer,
+});
+```
+
+streams を扱う actions という、割と auth のステートと距離のある処理から、getState/Redux を通じて雑に auth の情報参照できるのは書きやすい。
+
+blob/336e6dae184575928c39875f718e7f479cb1876c/streams/client/src/actions/index.js#L23
+
+```js
+export const createStreams = (formValues) => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+  const response = await streams.post("/streams", { ...formValues, userId });
+  dispatch({ type: CREATE_STREAM, payload: response.data });
+  history.push("/");
+};
+```
 
 ## 進捗
 
